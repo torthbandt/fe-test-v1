@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+</head>
+<body>
+
+  <section id="challenge">
+    <!--
+      Challenge 1: below you will find a link to an image of a button. Try to
+      replicate it as close as possible using only CSS code. No JS or extra
+      HTML is needed for this challenge.
+
+      Image reference: https://raw.githubusercontent.com/daniel-kc/fe-test/main/references/c3-css-button.png
+    -->
+    <style>
+      /* Your code here ******************************************************/
+
+      /* Reset some default styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Styles for the button */
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f1f1f1;
+      }
+
+      a {
+        display: inline-block;
+        background-image: linear-gradient(to bottom, lightgray 50%, gray 50%);
+        border-radius: 20px;
+        border: 10px solid lightgray;
+        box-shadow: inset -1px 0 0 black, inset 0 -1px 0 black, inset 0 1px 0 black, inset 1px 0 0 black;
+        color: #000;
+        font-weight: bold;
+        padding: 15px 10px;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      a:before,
+      a:after {
+        content:'★';
+        padding: 0 20px;
+      }
+
+    </style>
+
+    <!-- Do not change the markup -->
+    <a href="#">
+      Checkout
+    </a>
+  </section>
+
+</body>
+</html>
