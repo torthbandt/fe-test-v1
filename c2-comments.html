@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+    Instructions: for this challenge you will need to replicate the behavior as
+    shown on the reference video (/references/c2-comments.mp4).
+    You are simulating a message board where a user can select to respond to any
+    thread or to create a new one. In order to capture the username and the
+    message content you will need to use the same form already provided in the
+    HTML markup.
+    The form needs to be presented as a modal, appearing only when the user
+    wants to add a new message and hiding upon clicking the POST or CANCEL
+    button.
+    Comments must have support for nesting N messages as desired. If the user
+    clicks any Reply button, the new message should appear under the comment
+    the user decided to respond to.
+    Support for comment deletion must be added. Deleting any comment should
+    remove all the nested messages under it.
+    The existing thread and new threads should have support for reply and delete
+    action.
+
+    You cannot change the HTML markup. You can add extra CSS if necessary.
+  -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *, * ::before, * ::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+    }
+
+    .btn {
+      border: 1px solid hsl(0, 0%, 80%);
+      border-radius: 8px;
+      box-shadow: 0px 0px 0px 0px hsla(0, 0%, 0%, 0.3);
+      cursor: pointer;
+      padding: 8px 12px;
+      text-transform: uppercase;
+      transition: 0.1s ease-in-out transform, 0.1s ease-in-out box-shadow;
+      will-change: transform;
+      width: 100%;
+    }
+
+    .btn:hover {
+      transform: scale(1.02);
+      box-shadow: 0px 2px 2px 0px hsla(0, 0%, 0%, 0.3);
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+      box-shadow: 0px 0px 0px 0px hsla(0, 0%, 0%, 0.3);
+      transition: 0.05s ease-in-out transform, 0.05s ease-in-out box-shadow;
+    }
+
+    .btn--primary {
+      background-color: hsl(0, 0%, 90%);
+    }
+
+    .btn--secondary {
+      background-color: hsl(0, 0%, 100%);
+    }
+
+    .comment-box__new-thread {
+      margin-top: 24px;
+    }
+
+    .form-row {
+      margin-bottom: 16px;
+    }
+
+    .form-row:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .form-row input {
+      border: 1px solid hsl(0, 0%, 80%);
+      border-radius: 8px;
+      display: block;
+      padding: 8px 12px;
+      width: 100%;
+    }
+
+    .input-modal {
+      background-color: white;
+      width: 100%;
+    }
+
+    .input-modal form {
+      border: 1px solid hsl(0, 0%, 90%);
+      border-radius: 12px;
+      box-shadow: 0px 8px 16px hsla(0, 0%, 0%, 0.15);
+      display: block;
+      margin: 0 auto;
+      max-width: 400px;
+      padding: 20px;
+      width: 100%;
+    }
+
+    .comments {
+      border: 2px solid hsl(0, 0%, 90%);
+      border-radius: 12px;
+      padding: 24px 16px;
+      margin: 0 auto;
+      max-width: 600px;
+    }
+
+    .message {
+      background-color: aquamarine;
+      border: 1px solid hsl(0, 0%, 90%);
+      border-radius: 12px;
+      display: block;
+      margin: 0 0 24px;
+      padding: 16px;
+    }
+
+    .message h4 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .message p {
+      margin: 12px 0 0;
+    }
+
+    .message .actions {
+      margin: 16px 0 0;
+    }
+
+    .d-none {
+      display: none;
+    }
+
+
+
+    /* Your code here *********************************************************/
+
+
+  </style>
+</head>
+<body>
+
+  <div class="comments">
+    <h2>Leave a comment</h2>
+    <div class="comment-box">
+      <div class="comment-box__messages">
+        <div class="message message--top">
+          <h4>John Appleseed</h4>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum nihil, adipisci quo corporis omnis voluptates nam itaque consequuntur quis, pariatur repudiandae perferendis inventore temporibus laboriosam magnam quod, quae eum fugiat.</p>
+          <div class="actions">
+            <button class="btn-reply" type="button">Reply</button>
+            <button class="btn-delete" type="button">Delete</button>
+          </div>
+        </div>
+      </div>
+      <div class="comment-box__new-thread">
+        <button type="button">Start new thread</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="input-modal">
+    <form>
+      <div class="form-row">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" autocomplete="off">
+      </div>
+      <div class="form-row">
+        <label for="comment">Comment</label>
+        <input type="text" name="comment" id="comment" autocomplete="off">
+      </div>
+      <div class="form-row">
+        <button class="btn btn--primary" type="button">Post</button>
+      </div>
+      <div class="form-row">
+        <button class="btn btn--secondary" type="button">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Your code here **********************************************************
+
+
+
+  </script>
+</body>
+</html>
